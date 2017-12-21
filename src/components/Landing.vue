@@ -17,9 +17,9 @@
         Watch the film
       </button>
 
-      <a href="#" class="event_btn">
+      <router-link :to="{ name: 'Location' }" class="event_btn">
         Come to an event
-      </a>
+      </router-link>
 
     </main>
   </div>

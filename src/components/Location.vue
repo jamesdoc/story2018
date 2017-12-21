@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <li v-for="(location, i) in locations.sort()" :key="i">
-      <router-link :to="{ name: 'Venue', params: { id: location.split(', ')[0] } }">
-        {{ location.split(', ')[0] }}
+    <li v-for="(location, i) in venueTitles" :key="i">
+      <router-link :to="{ name: 'Venue', params: { id: location } }">
+        {{ location }}
       </router-link>
     </li>
   </div>
@@ -12,6 +12,10 @@
 <script>
   export default {
     name: 'Location',
+    created() {
+      this.venueTitles = this.locations.map(x => x.split(', ')[0]);
+      this.venueTitles.sort();
+    },
     props: {
       locations: {
         type: Array,
