@@ -15,7 +15,7 @@ new Vue({
   methods: {
     goGet() {
       const vm = this;
-      return fetch('static/cal/basic.json')
+      return fetch('/static/cal/basic.json')
         .then(res => res.json())
         .then((cal) => {
           vm.cal = cal;
