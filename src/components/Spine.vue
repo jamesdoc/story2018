@@ -9,7 +9,7 @@
       </div>
 
       <div class="spine__item spine__item--nav" @click="navOpen = !navOpen">
-        <div class="hamburger" v-bind:class="{'hamburger--open': navOpen}">
+        <div class="hamburger" v-bind:class="{ 'hamburger--open': navOpen }">
           <span></span>
           <span></span>
           <span></span>
@@ -18,7 +18,9 @@
       </div>
     </div>
 
-    <core-nav v-if="navOpen" />
+    <core-nav
+      v-if="navOpen"
+      v-bind="{navToggle}" />
 
   </div>
 </template>
@@ -35,6 +37,11 @@ export default {
     return {
       navOpen: false,
     };
+  },
+  methods: {
+    navToggle() {
+      this.navOpen = !this.navOpen;
+    },
   },
 };
 </script>

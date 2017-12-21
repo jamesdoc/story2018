@@ -2,17 +2,19 @@
   <nav class="nav">
     <ul class="nav__links">
       <li v-for="(n, i) in nav_items" :key="i">
-        {{ n.label }}
-        <span>{{ n.subtext }}</span>
+        <router-link :to="{ name: n.route }" v-on:click.native="navToggle()">
+          {{ n.label }}
+          <span>{{ n.subtext }}</span>
+        </router-link>
       </li>
     </ul>
 
     <div class="nav__social">
-      <a href="#" class="nav__social__icon">
+      <a href="https://www.facebook.com/storylondon2018/" class="nav__social__icon" target="_blank" rel="noopener">
         Facebook
       </a>
 
-      <a href="#" class="nav__social__icon">
+      <a href="https://www.instagram.com/storylondon2018/" class="nav__social__icon" target="_blank" rel="noopener">
         Instagram
       </a>
     </div>
@@ -22,26 +24,31 @@
 <script>
 export default {
   name: 'Corenav',
+  props: {
+    navToggle: {
+      type: Function,
+    },
+  },
   data() {
     return {
       nav_items: [
         {
           label: 'Home',
-          link: '#',
+          route: 'Landing',
         },
         {
           label: 'Central events',
-          link: '#',
+          route: 'Landing',
           subtext: 'Regent Street',
         },
         {
           label: 'Local events',
-          link: '#',
+          route: 'Landing',
           subtext: 'Universities across London',
         },
         {
           label: 'Find out more',
-          link: '#',
+          route: 'About',
         },
       ],
     };
@@ -85,11 +92,27 @@ export default {
 
   .nav__links li {
     margin: 40px 0;
+    font-size: 40px;
+    letter-spacing: 8px;
+    font-weight: 700;
+  }
+
+  .nav__links li a {
+    text-decoration: none;
+    color: #1B305B;
+    transition: all .2s;
+  }
+
+  .nav__links li a:hover {
+    color: #406d96;
   }
 
   .nav__links span {
     display: block;
     text-transform: initial;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
   }
 
   .nav__social {
