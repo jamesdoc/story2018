@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <ul class="nav__links">
-      <li v-for="n in nav_items">
+      <li v-for="(n, i) in nav_items" :key="i">
         {{ n.label }}
         <span>{{ n.subtext }}</span>
       </li>

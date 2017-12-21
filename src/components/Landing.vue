@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <ul>
-      <li v-for="c in cal">
+      <li v-for="(c, i) in cal" :key="i">
         {{ c.summary }}
       </li>
     </ul>

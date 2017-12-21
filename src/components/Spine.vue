@@ -6,34 +6,29 @@
         Story
       </div>
 
-      <div class="spine__item spine__item--nav" v-on:click="navToggle">
+      <div class="spine__item spine__item--nav" @click="navOpen = !navOpen">
         Menu
       </div>
     </div>
 
-    <corenav v-if="navOpen" />
+    <core-nav v-if="navOpen" />
 
   </div>
 </template>
 
 <script>
-import Corenav from './Corenav';
+import coreNav from './Corenav';
 
 export default {
   name: 'Spine',
   components: {
-    corenav: Corenav,
+    coreNav,
   },
   data() {
     return {
       navOpen: false,
     };
-  },
-  methods: {
-    navToggle() {
-      this.navOpen = !this.navOpen;
-    },
-  },
+  }
 };
 </script>
 
