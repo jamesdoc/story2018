@@ -60,6 +60,19 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
+    animation-duration: 1s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      left: -100vw;
+    }
+
+    to {
+      left: 90px;
+    }
   }
 
   .nav__links {

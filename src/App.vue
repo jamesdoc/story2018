@@ -25,9 +25,13 @@ export default {
 </script>
 
 <style>
+  * {
+    box-sizing: border-box;
+    font-family: Futura, 'Avenir', Helvetica, Arial, sans-serif;
+  }
+
   body {
     background-color: #92b3bc;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -39,5 +43,9 @@ export default {
   .container {
     display: flex;
     height: 100vh;
+  }
+
+  main {
+    width: calc(100vw - 90px);
   }
 </style>
