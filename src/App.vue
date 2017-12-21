@@ -2,7 +2,8 @@
   <div class="container">
     <spine></spine>
     <router-view
-      v-bind:cal=cal>
+      v-bind:cal=cal
+      v-bind:locations=locations>
     </router-view>
   </div>
 </template>
@@ -17,6 +18,10 @@ export default {
   name: 'app',
   props: {
     cal: {
+      type: Array,
+      default: () => [],
+    },
+    locations: {
       type: Array,
       default: () => [],
     },

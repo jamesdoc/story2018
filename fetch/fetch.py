@@ -4,7 +4,7 @@ import requests
 import os
 
 calUrl = "https://calendar.google.com/calendar/ical/vhljqr1b36na6dte64562b09kg%40group.calendar.google.com/public/basic.ics"
-output_dir = os.path.join(os.path.dirname(__file__), '../story/static/cal/')
+output_dir = os.path.join(os.path.dirname(__file__), '../static/cal/')
 events = []
 i = 0
 listening = False
@@ -21,7 +21,6 @@ def ical_line(v):
 
 r = requests.get(calUrl)
 if r.status_code == 200:
-  write_file(output_dir + "basic.ics", r.text)
   result = icalendar.Calendar().from_ical(r.text)
 
   for key, value in result.property_items():
@@ -34,7 +33,7 @@ if r.status_code == 200:
       event[key.lower()] = ical_line(value)
 
     if key == "BEGIN" and value == "VEVENT":
-      listening = True 
+      listening = True
       event = {}
 
   write_file(output_dir + "basic.json", json.dumps(events, indent=2))

@@ -43,7 +43,7 @@ export default {
         },
         {
           label: 'Local events',
-          route: 'Landing',
+          route: 'Location',
           subtext: 'Universities across London',
         },
         {

@@ -19,18 +19,26 @@ new Vue({
         .then(res => res.json())
         .then((cal) => {
           vm.cal = cal;
+          vm.extractLocations();
           return vm;
         });
+    },
+    extractLocations() {
+      this.locations = [...new Set(this.cal.map(x => x.location))];
     },
   },
   router,
   template: `
     <App
-      v-bind:cal="cal">
-    </App>
+      v-bind:locations="locations"
+      v-bind:cal="cal" />
   `,
   props: {
     cal: {
+      type: Array,
+      default: () => [],
+    },
+    locations: {
       type: Array,
       default: () => [],
     },
