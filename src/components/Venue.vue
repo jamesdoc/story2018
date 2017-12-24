@@ -1,17 +1,37 @@
 <template>
   <div>
-    <h1>{{ $route.params.id }}</h1>
-
+    <h1>{{ locationEvents[0]['location'][0] }}</h1>
+    {{ locationEvents }}
   </div>
 </template>
 
 <script>
 export default {
   name: 'Venue',
+  methods: {
+    collectEvents() {
+      const vm = this;
+      vm.locationEvents = vm.events.filter((x) => {
+        if (x.locationSlug === this.$route.params.id) {
+          return x;
+        }
+        return false;
+      });
+    },
+  },
+  created() {
+    this.collectEvents();
+  },
   data() {
     return {
       title: 'Venue',
     };
+  },
+  props: {
+    events: {
+      type: Array,
+      default: () => [],
+    },
   },
 };
 </script>

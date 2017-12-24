@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <spine></spine>
-    <router-view
-      v-bind:events=events
-      v-bind:locations=locations>
-    </router-view>
+
+    <transition name="fade" mode="out-in">
+      <router-view
+        v-bind:events=events
+        v-bind:locations=locations
+        :key="$route.fullPath">
+      </router-view>
+    </transition>
   </div>
 </template>
 
@@ -52,5 +56,12 @@ export default {
 
   main {
     width: calc(100vw - 90px);
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0
   }
 </style>

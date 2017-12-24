@@ -20,13 +20,12 @@ new Vue({
         .then(res => res.json())
         .then((cal) => {
           vm.cal = cal;
-          vm.extractLocations();
           vm.simplifyCal();
           return vm;
         });
     },
     simplifyCal() {
-      const opts = { replacement: '-', remove: null, lower: true };
+      const opts = { replacement: '-', remove: /[$*_+~.()'"!\-:@]/g, lower: true };
       this.events = this.cal.map((x) => {
         const e = {};
         e.title = x.summary;
@@ -37,9 +36,11 @@ new Vue({
         e.locationSlug = slugify(e.location[0], opts);
         return e;
       });
+      this.extractLocations();
     },
     extractLocations() {
-      this.locations = [...new Set(this.cal.map(x => x.location))];
+      this.locations = [...new Set(this.events.map(x => x.location[0]))];
+      this.locations.sort();
     },
   },
   router,

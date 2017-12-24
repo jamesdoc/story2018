@@ -1,10 +1,26 @@
 <template>
   <nav class="nav">
     <ul class="nav__links">
-      <li v-for="(n, i) in nav_items" :key="i">
-        <router-link :to="{ name: n.route }" v-on:click.native="navToggle()">
-          {{ n.label }}
-          <span>{{ n.subtext }}</span>
+      <li>
+        <router-link :to="{ name: 'Landing' }" v-on:click.native="navToggle()">
+          Home
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Venue', params: { id: 'all-souls-langham-place' } }" v-on:click.native="navToggle()">
+          Central events
+          <span>Regents Street</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Location' }" v-on:click.native="navToggle()">
+          Local events
+          <span>Universities across London</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'About' }" v-on:click.native="navToggle()">
+          Find out more
         </router-link>
       </li>
     </ul>
