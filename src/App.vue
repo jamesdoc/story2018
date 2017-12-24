@@ -57,6 +57,7 @@ export default {
   main {
     width: calc(100vw - 40px);
     left: 40px;
+    position: absolute;
   }
 
   @media (min-width: 800px) {
