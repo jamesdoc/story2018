@@ -39,6 +39,11 @@ export default {
     font-family: Futura, 'Avenir', Helvetica, Arial, sans-serif;
   }
 
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     background-color: #92b3bc;
     -webkit-font-smoothing: antialiased;
@@ -49,12 +54,8 @@ export default {
     padding: 0;
   }
 
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-
   main {
+    display: none;
     width: calc(100vw - 90px);
   }
 
@@ -63,5 +64,15 @@ export default {
   }
   .fade-enter, .fade-leave-to {
     opacity: 0
+  }
+  .slide-fade-enter-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(100vw);
+    opacity: 0;
   }
 </style>

@@ -84,11 +84,11 @@ export default {
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    animation-duration: 1s;
-    animation-name: slidein;
+    /* animation-duration: 1s;
+    animation-name: slidein; */
   }
 
-  @keyframes slidein {
+  /* @keyframes slidein {
     from {
       left: -100vw;
     }
@@ -96,7 +96,7 @@ export default {
     to {
       left: 90px;
     }
-  }
+  } */
 
   .nav__links {
     display: block;
