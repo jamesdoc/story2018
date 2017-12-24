@@ -48,8 +48,17 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .sidebar {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+
   .spine {
     background: white;
     bottom: 0;
@@ -61,6 +70,8 @@ export default {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
+    z-index: 2;
+    pointer-events: all;
   }
 
   .spine__item {
@@ -129,13 +140,13 @@ export default {
 
   .hamburger span {
     content: '';
-    background: #DFEDF1;
+    background: #c62127;
     height: 5px;
     width: 26px;
     display: block;
     border-radius: 8px;
     margin: 5px 0;
-    transition: all 1s;
+    transition: all .5s;
   }
 
   .hamburger span:last-child {
@@ -151,6 +162,7 @@ export default {
     transform: rotate(45deg);
     transform-origin: bottom;
     margin-top: 20px;
+    margin-left: -2px;
     background-color: #C62127;
   }
 
@@ -158,6 +170,7 @@ export default {
     opacity: 1;
     transform: rotate(-45deg);
     transform-origin: bottom;
+    margin-left: 2px;
     margin-top: -20px;
     margin-bottom: 10px;
     background-color: #1B305B;
@@ -168,10 +181,16 @@ export default {
       width: 45px;
       margin: 8px;
       height: 8px;
+      background-color: #DFEDF1;
+    }
+
+    .hamburger--open span:first-child {
+      margin-left: 6px;
     }
 
     .hamburger--open span:last-child {
       margin-top: -32px;
+      margin-left: 10px;
     }
   }
 </style>

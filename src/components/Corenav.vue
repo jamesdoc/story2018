@@ -76,41 +76,31 @@ export default {
   .nav {
     position: absolute;
     top: 0;
-    width: calc(100vw - 90px);
+    width: calc(100vw - 40px);
     background: #92B3BC;
-    left: 90px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    left: 40px;
+    bottom: 0;
     z-index: 1;
-    /* animation-duration: 1s;
-    animation-name: slidein; */
+    pointer-events: all;
   }
 
-  /* @keyframes slidein {
-    from {
-      left: -100vw;
-    }
-
-    to {
-      left: 90px;
-    }
-  } */
-
   .nav__links {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: 25vh 0;
+    justify-content: space-between;
     list-style-type: none;
-    margin: 0;
+    padding: 0 0 0 12px;
     text-align: left;
     text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 5px;
   }
 
   .nav__links li {
-    margin: 40px 0;
-    font-size: 40px;
-    letter-spacing: 8px;
-    font-weight: 700;
+    transition: margin .2s;
   }
 
   .nav__links li a {
@@ -126,9 +116,36 @@ export default {
   .nav__links span {
     display: block;
     text-transform: initial;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 3px;
+  }
+
+  @media (min-width: 800px) {
+    .nav {
+      width: calc(100vw - 90px);
+      left: 90px;
+    }
+
+    .nav__links {
+      padding-left: 50px;
+      font-size: 45px;
+      height: 66vh;
+      margin: 17vh 0;
+    }
+
+    .nav__links li:hover {
+      margin-left: 20px;
+    }
+  }
+
+
+
+  /* .nav__links li {
+    margin: 40px 0;
+    font-size: 40px;
+    letter-spacing: 8px;
+    font-weight: 700;
   }
 
   .nav__social {
@@ -138,5 +155,5 @@ export default {
   .nav__social a {
     display: block;
     margin: 40px 0;
-  }
+  } */
 </style>

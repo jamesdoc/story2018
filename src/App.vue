@@ -55,8 +55,15 @@ export default {
   }
 
   main {
-    display: none;
-    width: calc(100vw - 90px);
+    width: calc(100vw - 40px);
+    left: 40px;
+  }
+
+  @media (min-width: 800px) {
+    main {
+      width: calc(100vw - 90px);
+      left: 90px;
+    }
   }
 
   .fade-enter-active, .fade-leave-active {
@@ -66,10 +73,10 @@ export default {
     opacity: 0
   }
   .slide-fade-enter-active {
-    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
   .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
   .slide-fade-enter, .slide-fade-leave-to {
     transform: translateX(100vw);
