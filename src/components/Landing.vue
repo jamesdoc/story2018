@@ -28,12 +28,6 @@
 <script>
 export default {
   name: 'Landing',
-  props: {
-    cal: {
-      type: Array,
-      default: () => [],
-    },
-  },
 };
 </script>
 

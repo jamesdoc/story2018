@@ -2,7 +2,7 @@
   <div class="container">
     <spine></spine>
     <router-view
-      v-bind:cal=cal
+      v-bind:events=events
       v-bind:locations=locations>
     </router-view>
   </div>
@@ -17,7 +17,7 @@ export default {
   },
   name: 'app',
   props: {
-    cal: {
+    events: {
       type: Array,
       default: () => [],
     },
