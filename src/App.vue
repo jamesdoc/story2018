@@ -34,26 +34,6 @@ export default {
 </script>
 
 <style>
-  * {
-    box-sizing: border-box;
-    font-family: Futura, 'Avenir', Helvetica, Arial, sans-serif;
-  }
-
-  body, html {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: #92b3bc;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin: 0;
-    padding: 0;
-  }
-
   main {
     width: calc(100vw - 40px);
     left: 40px;

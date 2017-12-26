@@ -1,0 +1,10 @@
+/* BUILD */
+Name: James Doc (The Globe Church)
+Twitter: @jamesdoc
+Web: jamesdoc.com
+
+/* WORDS */
+Name: Joe Smith (UCCF)
+                            
+/* SITE */
+Components: Vue JS
