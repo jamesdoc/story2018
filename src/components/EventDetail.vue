@@ -13,9 +13,19 @@
           {{ details.title }}
       </div>
 
-      <div class="eventdetail__toggle">
+      <div
+        class="eventdetail__toggle"
+        v-if="details.desc"
+        @click="detailsOpen = !detailsOpen">
         Event details
       </div>
+
+      <transition name="fade" mode="out-in">
+        <div class="eventdetails__details" v-if="detailsOpen">
+          <span v-html="details.desc"></span>
+        </div>
+      </transition>
+
     </div>
   </div>
 </template>
@@ -28,6 +38,11 @@ export default {
       type: Object,
       default: () => {},
     },
+  },
+  data() {
+    return {
+      detailsOpen: false,
+    };
   },
 };
 </script>
@@ -49,6 +64,7 @@ export default {
     color: #c62127;
     display: flex;
     flex-direction: column;
+    flex: 0 0 auto;
     justify-content: center;
     text-transform: uppercase;
   }
@@ -57,7 +73,8 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 10px;
   }
 
   .eventdetail__time {
@@ -70,5 +87,28 @@ export default {
 
   .eventdetail__toggle {
     font-size: 12px;
+    color: #c62127;
+    text-decoration: underline;
+  }
+
+  .eventdetail__toggle:hover {
+    text-decoration: none;
+  }
+
+  @media (min-width: 800px) {
+    .eventdetail {
+      width: 33%;
+      padding: 30px;
+    }
+
+    .eventdetail__roundal {
+      width: 150px;
+      height: 150px;
+      font-size: 32px;
+    }
+
+    .eventdetail__info {
+      padding-top: 45px;
+    }
   }
 </style>

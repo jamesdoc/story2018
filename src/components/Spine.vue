@@ -64,7 +64,7 @@ export default {
     bottom: 0;
     box-shadow: black 1px 0px 4px 0px;
     overflow-x: hidden;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 40px;
     display: flex;

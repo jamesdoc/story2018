@@ -83,4 +83,13 @@ export default {
     transform: translateX(100vw);
     opacity: 0;
   }
+  .drop-enter-active, .drop-leave-active {
+    transition: all 1s;
+    height: 100%;
+  }
+  .drop-enter, .drop-leave-to {
+    opacity: 0;
+    height: 0;
+    transform: translateY(30px);
+  }
 </style>

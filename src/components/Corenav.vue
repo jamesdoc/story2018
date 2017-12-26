@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
   .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: calc(100vw - 40px);
     background: #92B3BC;

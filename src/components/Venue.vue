@@ -2,12 +2,12 @@
   <main>
     <h1 class="venueTitle">{{ locationEvents[0]['location'][0] }}</h1>
     <a href="#" class="venueMap" target="_blank" rel="noopener">Go to map</a>
-
-    <event-detail
-      v-for="(events, i) in locationEvents"
-      :key="i"
-      v-bind:details=events />
-
+    <div class="events">
+      <event-detail
+        v-for="(events, i) in locationEvents"
+        :key="i"
+        v-bind:details=events />
+    </div>
   </main>
 </template>
 
@@ -51,7 +51,7 @@ export default {
   main {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 12px;
     justify-content: start;
@@ -77,5 +77,13 @@ export default {
 
   .venueMap:hover {
     padding-bottom: 2px;
+  }
+
+  @media (min-width: 800px) {
+    .events {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 </style>
