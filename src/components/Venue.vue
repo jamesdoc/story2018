@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1 class="venueTitle">{{ locationEvents[0]['location'][0] }}</h1>
-    <a href="#" class="venueMap" target="_blank" rel="noopener">Go to map</a>
+    <a :href="'https://www.google.com/maps?hl=en&q=' + locationEvents[0]['location_str']" class="venueMap" target="_blank" rel="noopener">Go to map</a>
     <div class="events">
       <event-detail
         v-for="(events, i) in locationEvents"

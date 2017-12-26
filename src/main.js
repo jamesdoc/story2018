@@ -31,6 +31,7 @@ new Vue({
         const e = {};
         e.title = x.summary;
         e.desc = x.description;
+        e.location_str = x.location;
         e.location = x.location.split(', ');
         e.dtStart = moment(x.dtstart);
         e.dtEnd = moment(x.dtend);
