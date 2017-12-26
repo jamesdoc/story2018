@@ -1,16 +1,13 @@
 <template>
   <div>
-  
     <main>
-      <div class="background"></div>
-
       <header class="logo">
         <h1>Story London</h1>
         <h2>22-26 January 2018</h2>
       </header>
 
       <section class="tag">
-        <p>We all have stories to tell. What's yours?</p>
+        <p>We all have stories to tell. <span>What's yours?</span></p>
         <p>Story is a week of events across London universities, exploring stories of life, meaning, and faith.</p>
       </section>
 
@@ -96,8 +93,13 @@ main {
     max-width: 430px;
     font-size: 35px;
     line-height: 48px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     margin: 0 auto;
+  }
+
+  .tag span {
+    display: block;
+    margin-top: 10px;
   }
 
   .event_btn {

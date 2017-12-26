@@ -1,13 +1,24 @@
 <template>
-  <div>
-    <h1>{{ locationEvents[0]['location'][0] }}</h1>
-    {{ locationEvents }}
-  </div>
+  <main>
+    <h1 class="venueTitle">{{ locationEvents[0]['location'][0] }}</h1>
+    <a href="#" class="venueMap" target="_blank" rel="noopener">Go to map</a>
+
+    <event-detail
+      v-for="(events, i) in locationEvents"
+      :key="i"
+      v-bind:details=events />
+
+  </main>
 </template>
 
 <script>
+import eventDetail from './EventDetail';
+
 export default {
   name: 'Venue',
+  components: {
+    eventDetail,
+  },
   methods: {
     collectEvents() {
       const vm = this;
@@ -36,20 +47,35 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 12px;
+    justify-content: start;
+    background-size: cover;
+    background: url(/static/img/background.jpg) no-repeat center center;
+  }
+
+  .venueTitle {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px;
+  }
+
+  .venueMap {
+    text-align: left;
+    text-decoration: none;
+    color: #c62127;
+    text-transform: lowercase;
+    transition: padding 0.2s;
+    margin-bottom: 30px;
+  }
+
+  .venueMap:hover {
+    padding-bottom: 2px;
+  }
 </style>

@@ -45,30 +45,6 @@ export default {
       type: Function,
     },
   },
-  data() {
-    return {
-      nav_items: [
-        {
-          label: 'Home',
-          route: 'Landing',
-        },
-        {
-          label: 'Central events',
-          route: 'Landing',
-          subtext: 'Regent Street',
-        },
-        {
-          label: 'Local events',
-          route: 'Location',
-          subtext: 'Universities across London',
-        },
-        {
-          label: 'Find out more',
-          route: 'About',
-        },
-      ],
-    };
-  },
 };
 </script>
 
@@ -138,22 +114,4 @@ export default {
       margin-left: 20px;
     }
   }
-
-
-
-  /* .nav__links li {
-    margin: 40px 0;
-    font-size: 40px;
-    letter-spacing: 8px;
-    font-weight: 700;
-  }
-
-  .nav__social {
-    margin-right: 40px;
-  }
-
-  .nav__social a {
-    display: block;
-    margin: 40px 0;
-  } */
 </style>
