@@ -50,31 +50,33 @@ export default {
 <style scoped>
   .eventdetail {
     display: flex;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
+    margin-left: 6px;
   }
 
   .eventdetail__roundal {
     background-color: #c6dee5;
-    display: block;
-    width: 75px;
-    height: 75px;
     border-radius: 50%;
-    margin-right: 12px;
-    text-align: center;
+    box-shadow: 0 0 0 2px white, 0 0 0 6px #c6dee5;
     color: #c62127;
+    display: block;
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
+    height: 75px;
     justify-content: center;
+    margin-right: 12px;
+    text-align: center;
     text-transform: uppercase;
+    width: 75px;
   }
 
   .eventdetail__info {
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding-top: 10px;
+    text-align: left;
   }
 
   .eventdetail__time {
@@ -86,8 +88,8 @@ export default {
   }
 
   .eventdetail__toggle {
-    font-size: 12px;
     color: #c62127;
+    font-size: 12px;
     text-decoration: underline;
   }
 
@@ -97,14 +99,14 @@ export default {
 
   @media (min-width: 800px) {
     .eventdetail {
-      width: 33%;
       padding: 30px;
+      width: 33%;
     }
 
     .eventdetail__roundal {
-      width: 150px;
-      height: 150px;
       font-size: 32px;
+      height: 150px;
+      width: 150px;
     }
 
     .eventdetail__info {
