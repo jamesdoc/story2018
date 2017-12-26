@@ -110,7 +110,12 @@ export default {
     }
 
     .eventdetail__info {
+      margin-left: 12px;
       padding-top: 45px;
+    }
+
+    .eventdetail__title {
+      font-size: 24px;
     }
   }
 </style>
