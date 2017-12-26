@@ -37,6 +37,7 @@ new Vue({
         e.locationSlug = slugify(e.location[0], opts);
         return e;
       });
+      this.events.sort((a, b) => a.dtStart - b.dtStart);
       this.extractLocations();
     },
     extractLocations() {
