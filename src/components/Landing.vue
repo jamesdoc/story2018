@@ -7,7 +7,7 @@
       </header>
 
       <section class="tag">
-        <p>We all have stories to tell. <span>What's yours?</span></p>
+        <p>We all have stories to tell. <span>What are yours?</span></p>
         <p>Story is a week of events across London universities, exploring stories of life, meaning, and faith.</p>
       </section>
 
