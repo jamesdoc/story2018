@@ -4,6 +4,7 @@ import Landing from '@/components/Landing';
 import About from '@/components/About';
 import Location from '@/components/Location';
 import Venue from '@/components/Venue';
+import FourOhFour from '@/components/FourOhFour';
 
 Vue.use(Router);
 
@@ -29,6 +30,10 @@ export default new Router({
       path: '/locations/:id',
       name: 'Venue',
       component: Venue,
+    },
+    {
+      path: '*',
+      component: FourOhFour,
     },
   ],
 });
