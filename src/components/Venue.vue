@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main v-if="locationEvents.length">
     <h1 class="venueTitle">{{ locationEvents[0]['location'][0] }}</h1>
     <a :href="'https://www.google.com/maps?hl=en&q=' + locationEvents[0]['location_str']" class="venueMap" target="_blank" rel="noopener">Go to map</a>
     <div class="events">
@@ -19,23 +19,21 @@ export default {
   components: {
     eventDetail,
   },
-  methods: {
-    collectEvents() {
-      const vm = this;
-      vm.locationEvents = vm.events.filter((x) => {
+  computed: {
+    locationEvents() {
+      return this.events.filter((x) => {
         if (x.locationSlug === this.$route.params.id) {
           return x;
         }
         return false;
       });
     },
-  },
-  created() {
-    this.collectEvents();
+
   },
   data() {
     return {
       title: 'Venue',
+      cal: [],
     };
   },
   props: {
@@ -76,7 +74,7 @@ export default {
   }
 
   .venueMap:hover {
-    padding-bottom: 2px;
+    text-decoration: underline;
   }
 
   @media (min-width: 800px) {

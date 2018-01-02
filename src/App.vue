@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import slugify from 'slugify';
+import moment from 'moment';
 import Spine from './components/Spine';
 
 export default {
@@ -20,14 +22,41 @@ export default {
     spine: Spine,
   },
   name: 'app',
-  props: {
-    events: {
-      type: Array,
-      default: () => [],
+  data() {
+    return {
+      events: [],
+      locations: [],
+      cal: [],
+    };
+  },
+  created() {
+    this.goGet();
+  },
+  methods: {
+    goGet() {
+      fetch('/static/cal/basic.json')
+        .then(res => res.json())
+        .then(this.simplifyCal);
     },
-    locations: {
-      type: Array,
-      default: () => [],
+    simplifyCal(cal) {
+      const opts = { replacement: '-', remove: /[$*_+~.()'"!\-:@]/g, lower: true };
+      this.events = cal.map((x) => {
+        const e = {};
+        e.title = x.summary;
+        e.desc = x.description;
+        e.location_str = x.location;
+        e.location = x.location.split(', ');
+        e.dtStart = moment(x.dtstart);
+        e.dtEnd = moment(x.dtend);
+        e.locationSlug = slugify(e.location[0], opts);
+        return e;
+      });
+      this.events.sort((a, b) => a.dtStart - b.dtStart);
+      this.extractLocations();
+    },
+    extractLocations() {
+      this.locations = [...new Set(this.events.map(x => x.location[0]))];
+      this.locations.sort();
     },
   },
 };

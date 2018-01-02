@@ -16,14 +16,16 @@
 
   export default {
     name: 'Location',
-    created() {
-      const opts = { replacement: '-', remove: /[$*_+~.()'"!\-:@]/g, lower: true };
-      this.venueTitles = this.locations.map((x) => {
-        const e = {};
-        e.title = x;
-        e.slug = slugify(x, opts);
-        return e;
-      });
+    computed: {
+      venueTitles() {
+        const opts = { replacement: '-', remove: /[$*_+~.()'"!\-:@]/g, lower: true };
+        return this.locations.map((x) => {
+          const e = {};
+          e.title = x;
+          e.slug = slugify(x, opts);
+          return e;
+        });
+      },
     },
     props: {
       locations: {
@@ -34,6 +36,7 @@
     data() {
       return {
         title: 'Locations',
+        cal: [],
       };
     },
   };
@@ -91,6 +94,7 @@
     .locations li {
       padding: 33px 0;
       width: 50%;
+      font-size: 20px;
     }
   }
 </style>
