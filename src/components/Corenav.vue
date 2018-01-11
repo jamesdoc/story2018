@@ -26,11 +26,11 @@
     </ul>
 
     <div class="nav__social">
-      <a href="https://www.facebook.com/storylondon2018/" class="nav__social__icon" target="_blank" rel="noopener">
+      <a href="https://www.facebook.com/storylondon2018/" class="nav__social__icon nav__social__icon--facebook" target="_blank" rel="noopener">
         Facebook
       </a>
 
-      <a href="https://www.instagram.com/storylondon2018/" class="nav__social__icon" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/storylondon2018/" class="nav__social__icon nav__social__icon--instagram" target="_blank" rel="noopener">
         Instagram
       </a>
     </div>
@@ -97,6 +97,25 @@ export default {
     letter-spacing: 3px;
   }
 
+  .nav__social {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+  }
+
+  .nav__social a {
+    text-decoration: none;
+    margin-left: 12px;
+    color: #c62228;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .nav__social a:hover {
+    color: #1b315b;
+  }
+
   @media (min-width: 800px) {
     .nav {
       width: calc(100vw - 90px);
@@ -112,6 +131,50 @@ export default {
 
     .nav__links li:hover {
       margin-left: 20px;
+    }
+
+    .nav__social {
+      right: 50px;
+      top: 0;
+      display: flex;
+      margin: 25vw 0;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .nav__social a{
+      display: block;
+    }
+
+    .nav__social__icon {
+      background-color: #c6dee5;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px #92b3bc, 0 0 0 6px #c6dee5;
+      color: #c62127;
+      display: block;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+      height: 75px;
+      justify-content: center;
+      margin-bottom: 50px;
+      text-indent: -9999999px;
+      width: 75px;
+      transition: box-shadow .2s;
+    }
+
+    .nav__social__icon:hover {
+      box-shadow: 0 0 0 4px #c62228, 0 0 0 6px #c6dee5;
+    }
+
+    .nav__social__icon--instagram {
+      background-image: url('/static/img/instagram.svg');
+    }
+
+    .nav__social__icon--facebook {
+      background-image: url('/static/img/facebook.svg');
     }
   }
 </style>
