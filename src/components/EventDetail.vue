@@ -21,7 +21,7 @@
       </div>
 
       <transition name="fade" mode="out-in">
-        <div class="eventdetails__details" v-if="detailsOpen">
+        <div class="eventdetail__details" v-if="detailsOpen">
           <span v-html="details.desc"></span>
         </div>
       </transition>
@@ -116,6 +116,10 @@ export default {
 
     .eventdetail__title {
       font-size: 24px;
+    }
+
+    .eventdetail__details {
+      margin-top: 10px;
     }
   }
 </style>
