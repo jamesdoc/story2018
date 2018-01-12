@@ -100,7 +100,7 @@ export default {
   @media (min-width: 800px) {
     .eventdetail {
       padding: 30px;
-      width: 33%;
+      width: 45%;
     }
 
     .eventdetail__roundal {
